@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Evacuation Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code, pre {
+            background: #eee;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Disaster Evacuation Planner</h1>
+
+    <h2>1. Problem Description</h2>
+    <p>
+        Natural and man-made disasters such as floods, earthquakes, wildfires, and industrial accidents
+        require efficient evacuation planning. This system calculates the safest and fastest routes
+        for people to reach shelters.
+    </p>
+    <ul>
+        <li>Find shortest and safest paths</li>
+        <li>Avoid hazardous routes</li>
+        <li>Distribute evacuees efficiently</li>
+        <li>Adapt to dynamic conditions</li>
+    </ul>
+
+    <h2>2. Algorithms Used</h2>
+
+    <h3>Dijkstra’s Algorithm</h3>
+    <p>Finds the shortest path from source to all nodes using non-negative weights.</p>
+
+    <h3>A* Algorithm</h3>
+    <p>Uses heuristics to speed up pathfinding.</p>
+
+    <h3>BFS (Breadth-First Search)</h3>
+    <p>Used when all edges have equal weight.</p>
+
+    <h3>Multi-Source Shortest Path</h3>
+    <p>Finds nearest shelter among multiple options.</p>
+
+    <h3>Risk-Aware Routing</h3>
+    <pre>
+cost = distance + (risk_factor × weight)
+    </pre>
+
+    <h2>3. Execution Steps</h2>
+    <ol>
+        <li>Prepare input graph (nodes and edges)</li>
+        <li>Construct adjacency list</li>
+        <li>Select algorithm (Dijkstra / A*)</li>
+        <li>Compute optimal path</li>
+        <li>Display output</li>
+        <li>Update dynamically if needed</li>
+    </ol>
+
+    <h2>4. Sample Input</h2>
+    <pre>
+Nodes: A, B, C, D, E (Shelter), F (Shelter)
+
+Edges:
+A-B (2)
+A-C (5)
+B-C (1)
+B-D (4)
+C-D (2)
+D-E (3)
+C-F (6)
+
+Source: A
+Shelters: E, F
+    </pre>
+
+    <h2>5. Sample Output</h2>
+
+    <h3>Using Dijkstra’s Algorithm</h3>
+    <pre>
+Path: A → B → C → D → E
+Total Cost: 8
+
+Alternative:
+A → C → F
+Total Cost: 11
+
+Selected Shelter: E
+    </pre>
+
+    <h3>With Risk Consideration</h3>
+    <pre>
+Path: A → B → D → E
+Total Cost: 9
+
+Selected Shelter: E
+    </pre>
+
+    <h2>6. Features</h2>
+    <ul>
+        <li>Multiple evacuation routes</li>
+        <li>Real-time updates</li>
+        <li>Risk-aware navigation</li>
+        <li>Scalable system</li>
+    </ul>
+
+    <h2>7. Future Enhancements</h2>
+    <ul>
+        <li>Integration with live traffic</li>
+        <li>Mobile application</li>
+        <li>AI-based crowd prediction</li>
+        <li>Map visualization</li>
+    </ul>
+
+    <h2>8. Conclusion</h2>
+    <p>
+        The Disaster Evacuation Planner helps optimize evacuation routes using graph algorithms,
+        ensuring faster and safer movement during emergencies.
+    </p>
+
+</div>
+
+</body>
+</html>
